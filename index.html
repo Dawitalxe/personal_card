@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Card</title>
+    <link rel="stylesheet" href="assets/style/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top_color"></div>
+        <div class="profileBox">
+            <div class="imgProf">
+                <img src="assets/image/profile.png"  alt="profile">
+            </div>
+            <div class="info">
+                <h1>Name.</h1>
+                <h3>Possiton</h3>
+            </div>
+            <div class="infoDisc">
+                <p>
+                    PHP is a popular programming language that allows you to embed powerful functionality into HTML.
+                </p>
+            </div>
+        </div>
+        <div class="socalMedia">
+            <span>
+                <img src="assets/image/icons/fb.png" alt="">
+            </span>
+            <span>
+                <img src="assets/image/icons/tiktok.png" alt="">
+            </span>
+            <span>
+                <img src="assets/image/icons/fb.png" alt="">
+            </span>
+            <span>
+                <img src="assets/image/icons/insta.png" alt="">
+            </span>
+            <span>
+                <img src="assets/image/icons/whatsapp.png" alt="">
+            </span>
+            <span>
+                <img src="assets/image/icons/call.png" alt="">
+            </span>
+        </div>
+
+        <form class="subscribeForm">
+            <label class="visuallyHidden" for="email">Email address</label>
+            <input id="email" type="email" name="email" placeholder="Enter your email" autocomplete="email" required>
+            <button type="submit" id="sub">Subscribe</button>
+            <p class="formMessage" role="status" aria-live="polite"></p>
+        </form>
+    </div>
+    <script>
+        const subscribeForm = document.querySelector(".subscribeForm");
+        const formMessage = document.querySelector(".formMessage");
+
+        document.querySelector("#sub").addEventListener('click', ()=> {
+            formMessage.style.display = "block"
+
+        })
+
+        subscribeForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            formMessage.textContent = "Email looks valid. This demo does not send or store submissions.";
+        });
+
+        subscribeForm.addEventListener("input", () => {
+            formMessage.textContent = "";
+        });
+    </script>
+</body>
+</html>
